@@ -39,16 +39,19 @@ $result = mysqli_query($conn, $sql);
             background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             color: white;
             text-align: center;
-            padding: 15px;
+            padding: 10px;
             font-size: 24px;
             font-weight: bold;
             border-radius: 8px;
             margin-bottom: 20px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 50%;
+            margin: 0 auto;
         }
         
         table {
-            width: 100%;
+            margin: 0 auto;
+            width: 50%;
             border-collapse: collapse;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             border-radius: 8px;
@@ -138,7 +141,9 @@ $result = mysqli_query($conn, $sql);
         .exito {
             background-color: #d4edda;
             color: #155724;
-            border: 1px solid #c3e6cb;
+            border: 5px solid #c3e6cb;
+             width: 50%;
+            margin: 0 auto;
         }
         
         .error {
