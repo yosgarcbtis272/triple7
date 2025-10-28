@@ -114,12 +114,45 @@ $result = mysqli_query($conn, $sql);
         .acciones {
             text-align: center;
         }
+        .btn-editar {
+         background-color: #f39c12;
+         color: white;
+         border: none;
+         padding: 8px 15px;
+         border-radius: 4px;
+          cursor: pointer;
+         font-size: 14px;
+         text-decoration: none;
+         display: inline-block;
+         margin-left: 5px;
+         transition: background-color 0.3s;
+}
+
+         .btn-editar:hover {
+          background-color: #e67e22;
+          text-decoration: none;
+        color: white;
+}
         
+        .btn-agregar {
+            background-color: #4ae73cff;
+            color: white;
+            border: none;
+            padding: 8px 5px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        .btn-agregar:hover {
+            background-color: #93c02bff;
+        }
+
         .btn-eliminar {
             background-color: #e74c3c;
             color: white;
             border: none;
-            padding: 8px 15px;
+            padding: 8px 5px;
             border-radius: 4px;
             cursor: pointer;
             font-size: 14px;
@@ -160,6 +193,7 @@ $result = mysqli_query($conn, $sql);
 
     <?php if (mysqli_num_rows($result) > 0): ?>
         <table>
+            
             <tr>
                 <th>ID</th>
                 <th>Nombre</th>
@@ -186,14 +220,21 @@ $result = mysqli_query($conn, $sql);
                         <img src="<?php echo $row['foto']; ?>" class="foto-alumno" alt="Foto de <?php echo $row['nombre']; ?>">
                     </td>
                     <td class="acciones">
-                        <form action="eliminar_alumno.php" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar a <?php echo $row['nombre']; ?>?');">
-                            <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                            <button type="submit" class="btn-eliminar">Eliminar</button>
-                        </form>
-                    </td>
+    <form action="eliminar_alumno.php" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar a <?php echo $row['nombre']; ?>?');" style="display: inline;">
+        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+        <button type="submit" class="btn-eliminar">Eliminar</button>
+    </form>
+    <a href="editar.php?id=<?php echo $row['id']; ?>" class="btn-editar">Editar</a>
+</td>
                 </tr>
             <?php endwhile; ?>
-        </table>
+                </table>
+        
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="agregar.php" style="background-color: #27ae60; color: white; padding: 12px 25px; text-decoration: none; border-radius: 4px; font-weight: bold; display: inline-block;">
+                Agregar Nuevo Alumno
+            </a>
+        </div>
     <?php else: ?>
         <div class="sin-alumnos">Sin alumnos registrados</div>
     <?php endif; ?>
