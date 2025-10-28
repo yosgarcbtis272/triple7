@@ -36,7 +36,7 @@ $result = mysqli_query($conn, $sql);
         }
         
         .titulo-equipo {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            background: linear-gradient(135deg, #9fb100ff 0%, #008fa8ff 100%);
             color: white;
             text-align: center;
             padding: 10px;
@@ -44,7 +44,7 @@ $result = mysqli_query($conn, $sql);
             font-weight: bold;
             border-radius: 8px;
             margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(245, 59, 59, 0.1);
             width: 50%;
             margin: 0 auto;
         }
@@ -67,11 +67,11 @@ $result = mysqli_query($conn, $sql);
         }
         
         tr:nth-child(even) {
-            background-color: #e8f4f8; /* Azul claro */
+            background-color: #ffdcdcff; /* Azul claro */
         }
         
         tr:nth-child(odd) {
-            background-color: #f0e6fa; /* Lila claro */
+            background-color: #b82a2aff; /* Lila claro */
         }
         
         tr:hover {
@@ -82,7 +82,7 @@ $result = mysqli_query($conn, $sql);
         
         td {
             padding: 10px 15px;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #ff4d4dff;
         }
         
         .foto-alumno {
